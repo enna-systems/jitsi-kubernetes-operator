@@ -234,7 +234,7 @@ func NewJVBHPASyncer(jitsi *v1alpha1.Jitsi, c client.Client) syncer.Interface {
 						},
 						Target: autoscalingv2.MetricTarget{
 							Type:         autoscalingv2.AverageValueMetricType,
-							AverageValue: resource.NewMilliQuantity(10, resource.DecimalSI),
+							AverageValue: resource.NewMilliQuantity(800, resource.DecimalSI),
 						},
 					},
 				},
