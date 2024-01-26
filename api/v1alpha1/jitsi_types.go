@@ -122,6 +122,8 @@ type Web struct {
 	//+optional
 	CustomBodyConfig *corev1.LocalObjectReference `json:"customBodyConfigCM,omitempty"`
 	//+optional
+	CustomTranslationDeConfig *corev1.LocalObjectReference `json:"customTranslationDeConfigCM,omitempty"`
+	//+optional
 	CustomCloseConfig *corev1.LocalObjectReference `json:"customCloseConfigCM,omitempty"`
 }
 

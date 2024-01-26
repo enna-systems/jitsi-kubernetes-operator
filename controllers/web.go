@@ -185,6 +185,28 @@ func NewWebDeploymentSyncer(jitsi *v1alpha1.Jitsi, c client.Client) syncer.Inter
 				SubPath:   "custom-body.html",
 			})
 		}
+		if jitsi.Spec.Web.CustomTranslationDeConfig != nil {
+			dep.Spec.Template.Spec.Volumes = append(dep.Spec.Template.Spec.Volumes,
+				corev1.Volume{
+					Name: "custom-translation-de",
+					VolumeSource: corev1.VolumeSource{
+						ConfigMap: &corev1.ConfigMapVolumeSource{
+							LocalObjectReference: *jitsi.Spec.Web.CustomTranslationDeConfig,
+							Items: []corev1.KeyToPath{
+								{
+									Key:  "custom-translation-de.json",
+									Path: "custom-translation-de.json",
+								},
+							},
+						},
+					},
+				})
+			container.VolumeMounts = append(container.VolumeMounts, corev1.VolumeMount{
+				Name:      "custom-translation-de",
+				MountPath: "/usr/share/jitsi-meet/lang/main-de.json",
+				SubPath:   "custom-translation-de.json",
+			})
+		}
 		if jitsi.Spec.Web.CustomCloseConfig != nil {
 			dep.Spec.Template.Spec.Volumes = append(dep.Spec.Template.Spec.Volumes,
 				corev1.Volume{

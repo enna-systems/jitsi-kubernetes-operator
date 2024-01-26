@@ -427,6 +427,11 @@ func (in *Web) DeepCopyInto(out *Web) {
 		*out = new(v1.LocalObjectReference)
 		**out = **in
 	}
+	if in.CustomTranslationDeConfig != nil {
+		in, out := &in.CustomTranslationDeConfig, &out.CustomTranslationDeConfig
+		*out = new(v1.LocalObjectReference)
+		**out = **in
+	}
 	if in.CustomCloseConfig != nil {
 		in, out := &in.CustomCloseConfig, &out.CustomCloseConfig
 		*out = new(v1.LocalObjectReference)
