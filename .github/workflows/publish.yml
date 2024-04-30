@@ -36,7 +36,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: VERSION=${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.version'] }}
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: jitsi-kubernetes-operator
           path: jitsi-kubernetes-operator.tar
@@ -75,7 +75,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: JITSI_VERSION=${{ steps.version.outputs.jitsi }}
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.IMAGE_NAME }}
           path: ${{ env.IMAGE_NAME }}.tar
@@ -112,7 +112,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: JITSI_VERSION=${{ steps.version.outputs.jitsi }}
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.IMAGE_NAME }}
           path: ${{ env.IMAGE_NAME }}.tar
@@ -151,7 +151,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: JITSI_VERSION=${{ steps.version.outputs.jitsi }}
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.IMAGE_NAME }}
           path: ${{ env.IMAGE_NAME }}.tar
@@ -190,7 +190,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: JITSI_VERSION=${{ steps.version.outputs.jitsi }}
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.IMAGE_NAME }}
           path: ${{ env.IMAGE_NAME }}.tar
@@ -229,7 +229,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: JITSI_VERSION=${{ steps.version.outputs.jitsi }}
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.IMAGE_NAME }}
           path: ${{ env.IMAGE_NAME }}.tar
@@ -268,7 +268,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: JITSI_VERSION=${{ steps.version.outputs.jitsi }}
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.IMAGE_NAME }}
           path: ${{ env.IMAGE_NAME }}.tar
