@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: rg.fr-par.scw.cloud/prod-enna-nsp/enna-systems
-  BASE_REPO: rg.fr-par.scw.cloud/prod-enna-nsp/enna-systems/${{ github.repository }}
+  BASE_REPO: rg.fr-par.scw.cloud/prod-enna-nsp/${{ github.repository }}
 
 jobs:
   build-operator:
