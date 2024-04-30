@@ -1,6 +1,6 @@
 VERSION ?= latest
 # Image URL to use all building/pushing image targets
-IMG ?= rg.fr-par.scw.cloud/prod-enna-nsp/jitsi-kubernetes-operator:${VERSION}
+IMG ?= rg.fr-par.scw.cloud/prod-enna-nsp/enna-systems/jitsi-kubernetes-operator:${VERSION}
 # ENVTEST_K8S_VERSION refers to the version of kubebuilder assets to be downloaded by envtest binary.
 ENVTEST_K8S_VERSION = 1.24.2
 
@@ -70,7 +70,7 @@ run: manifests generate fmt vet ## Run a controller from your host.
 
 .PHONY: docker-login
 docker-login: ## Push docker image with the manager.
-	docker login rg.fr-par.scw.cloud/prod-enna-nsp -u nologin -p ${SCW_TOKEN}
+	docker login rg.fr-par.scw.cloud/prod-enna-nsp/enna-systems -u nologin -p ${SCW_TOKEN}
 
 .PHONY: docker-build
 docker-build: test ## Build docker image with the manager.
