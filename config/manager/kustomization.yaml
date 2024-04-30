@@ -12,5 +12,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: controller
-  newName: rg.fr-par.scw.cloud/prod-enna-nsp/enna-jitsi-k8s-operator
+  newName: rg.fr-par.scw.cloud/prod-enna-nsp/jitsi-kubernetes-operator
   newTag: latest

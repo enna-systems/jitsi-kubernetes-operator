@@ -11,7 +11,7 @@ kind load image-archive --name jitsi-test build/web.tar
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 
-cat deploy/jitsi-operator.yaml | sed "s#ghcr\.io/jitsi-contrib/jitsi-kubernetes-operator:latest#$BASE_REPO:$VERSION#" | kubectl apply -f -
+cat deploy/jitsi-operator.yaml | sed "s#rg\.fr-par\.scw\.cloud/prod-enna-nsp/jitsi-kubernetes-operator:latest#$BASE_REPO:$VERSION#" | kubectl apply -f -
 
 LOCAL_IP=$(ip route get 1 | awk '{print $7}')
 echo "Local IP is $LOCAL_IP"
