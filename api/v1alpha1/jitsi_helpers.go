@@ -111,7 +111,7 @@ func (jitsi *Jitsi) EnvVars(names []string) []corev1.EnvVar {
 
 func (jitsi *Jitsi) SetDefaults() {
 	if len(jitsi.Spec.Image.Registry) == 0 {
-		jitsi.Spec.Image.Registry = "rg.fr-par.scw.cloud/prod-enna-nsp/enna-systems/jitsi-kubernetes-operator"
+		jitsi.Spec.Image.Registry = "ghcr.io/enna-systems/jitsi-kubernetes-operator"
 	}
 
 	if len(jitsi.Spec.Image.Tag) == 0 {

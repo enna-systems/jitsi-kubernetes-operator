@@ -6,8 +6,8 @@ on:
   pull_request:
     branches: [master]
 env:
-  REGISTRY: rg.fr-par.scw.cloud/prod-enna-nsp/enna-systems
-  BASE_REPO: rg.fr-par.scw.cloud/prod-enna-nsp/${{ github.repository }}
+  REGISTRY: ghcr.io
+  BASE_REPO: ghcr.io/${{ github.repository }}
 jobs:
   build-operator:
     runs-on: ubuntu-latest
@@ -302,8 +302,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ${{ env.REGISTRY }}
-          username: nologin
-          password: ${{ secrets.SCW_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Download Artifact
         uses: actions/download-artifact@v3
         env:
@@ -362,8 +362,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ${{ env.REGISTRY }}
-          username: nologin
-          password: ${{ secrets.SCW_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
@@ -389,8 +389,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ${{ env.REGISTRY }}
-          username: nologin
-          password: ${{ secrets.SCW_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
@@ -414,8 +414,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ${{ env.REGISTRY }}
-          username: nologin
-          password: ${{ secrets.SCW_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
@@ -441,8 +441,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ${{ env.REGISTRY }}
-          username: nologin
-          password: ${{ secrets.SCW_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
@@ -468,8 +468,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ${{ env.REGISTRY }}
-          username: nologin
-          password: ${{ secrets.SCW_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
@@ -495,8 +495,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ${{ env.REGISTRY }}
-          username: nologin
-          password: ${{ secrets.SCW_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
@@ -522,8 +522,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ${{ env.REGISTRY }}
-          username: nologin
-          password: ${{ secrets.SCW_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:

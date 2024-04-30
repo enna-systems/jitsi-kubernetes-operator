@@ -2949,7 +2949,7 @@ spec:
         - --leader-elect
         command:
         - /manager
-        image: rg.fr-par.scw.cloud/prod-enna-nsp/enna-systems/jitsi-kubernetes-operator:latest
+        image: ghcr.io/enna-systems/jitsi-kubernetes-operator:latest
         livenessProbe:
           httpGet:
             path: /healthz
