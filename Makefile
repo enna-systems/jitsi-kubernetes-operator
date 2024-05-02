@@ -68,9 +68,9 @@ build: generate fmt vet ## Build manager binary.
 run: manifests generate fmt vet ## Run a controller from your host.
 	go run ./main.go
 
-# .PHONY: docker-login
-# docker-login: ## Push docker image with the manager.
-# 	docker login ghcr.io/enna-systems -u nologin -p ${SCW_TOKEN}
+.PHONY: docker-login
+docker-login: ## Push docker image with the manager.
+	docker login ghcr.io/enna-systems -u ${GITHUB_USER} -p ${GITHUB_TOKEN}
 
 .PHONY: docker-build
 docker-build: test ## Build docker image with the manager.
