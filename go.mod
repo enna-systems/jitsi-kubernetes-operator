@@ -1,4 +1,4 @@
-module github.com/jitsi-contrib/jitsi-kubernetes-operator
+module github.com/enna-systems/jitsi-kubernetes-operator
 
 go 1.18
 

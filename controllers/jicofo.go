@@ -6,7 +6,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/jitsi-contrib/jitsi-kubernetes-operator/api/v1alpha1"
+	"github.com/enna-systems/jitsi-kubernetes-operator/api/v1alpha1"
 
 	"github.com/presslabs/controller-util/pkg/syncer"
 	"github.com/tidwall/gjson"

@@ -74,18 +74,6 @@ func (jitsi *Jitsi) EnvVarValue(name string) string {
 		value = jitsi.Spec.Region
 	case "PUBLIC_URL":
 		value = "https://" + jitsi.Spec.Domain
-	case "XMPP_DOMAIN":
-		value = jitsi.Spec.Domain
-	case "XMPP_AUTH_DOMAIN":
-		value = "auth." + jitsi.EnvVarValue("XMPP_DOMAIN")
-	case "XMPP_GUEST_DOMAIN":
-		value = "guest." + jitsi.EnvVarValue("XMPP_DOMAIN")
-	case "XMPP_INTERNAL_MUC_DOMAIN":
-		value = "internal-muc." + jitsi.EnvVarValue("XMPP_DOMAIN")
-	case "XMPP_MUC_DOMAIN":
-		value = "muc." + jitsi.EnvVarValue("XMPP_DOMAIN")
-	case "XMPP_RECORDER_DOMAIN":
-		value = "recorder." + jitsi.EnvVarValue("XMPP_DOMAIN")
 	case "SHUTDOWN_REST_ENABLED":
 		if jitsi.Spec.JVB.GracefulShutdown || jitsi.Spec.Variables["SHUTDOWN_REST_ENABLED"] == "1" {
 			value = "1"
@@ -123,7 +111,7 @@ func (jitsi *Jitsi) EnvVars(names []string) []corev1.EnvVar {
 
 func (jitsi *Jitsi) SetDefaults() {
 	if len(jitsi.Spec.Image.Registry) == 0 {
-		jitsi.Spec.Image.Registry = "ghcr.io/jitsi-contrib/jitsi-kubernetes-operator"
+		jitsi.Spec.Image.Registry = "ghcr.io/enna-systems/jitsi-kubernetes-operator"
 	}
 
 	if len(jitsi.Spec.Image.Tag) == 0 {

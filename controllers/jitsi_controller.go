@@ -28,7 +28,7 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	appsv1alpha1 "github.com/jitsi-contrib/jitsi-kubernetes-operator/api/v1alpha1"
+	appsv1alpha1 "github.com/enna-systems/jitsi-kubernetes-operator/api/v1alpha1"
 
 	apierrs "k8s.io/apimachinery/pkg/api/errors"
 )
