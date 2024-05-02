@@ -347,8 +347,8 @@ jobs:
         env:
           ARTIFACT: torture
       - name: Run test
-        # env:
-        #   VERSION: ${{ github.ref_name }}
+        env:
+          VERSION: pr-2
         run: ./scripts/test.sh
   publish-operator:
     runs-on: ubuntu-latest
