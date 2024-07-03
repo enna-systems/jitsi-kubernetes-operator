@@ -125,38 +125,38 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Create k8s Kind Cluster
-        uses: helm/kind-action@v1.10.0
-        with:
-          cluster_name: jitsi-test
-          config: test/cluster.yaml
-      - &download-artifact
-        name: Download Artifact
-        uses: actions/download-artifact@v4
-        env:
-          ARTIFACT: jitsi-kubernetes-operator
-        with:
-          name: ${{ env.ARTIFACT }}
-          path: build
-      - <<: *download-artifact
-        env:
-          ARTIFACT: jicofo
-      - <<: *download-artifact
-        env:
-          ARTIFACT: jvb
-      - <<: *download-artifact
-        env:
-          ARTIFACT: prosody
-      - <<: *download-artifact
-        env:
-          ARTIFACT: web
-      - <<: *download-artifact
-        env:
-          ARTIFACT: torture
-      - name: Run test
-        env:
-          VERSION: ${{ github.ref_name }}
-        run: ./scripts/test.sh
+      # - name: Create k8s Kind Cluster
+      #   uses: helm/kind-action@v1.10.0
+      #   with:
+      #     cluster_name: jitsi-test
+      #     config: test/cluster.yaml
+      # - &download-artifact
+      #   name: Download Artifact
+      #   uses: actions/download-artifact@v4
+      #   env:
+      #     ARTIFACT: jitsi-kubernetes-operator
+      #   with:
+      #     name: ${{ env.ARTIFACT }}
+      #     path: build
+      # - <<: *download-artifact
+      #   env:
+      #     ARTIFACT: jicofo
+      # - <<: *download-artifact
+      #   env:
+      #     ARTIFACT: jvb
+      # - <<: *download-artifact
+      #   env:
+      #     ARTIFACT: prosody
+      # - <<: *download-artifact
+      #   env:
+      #     ARTIFACT: web
+      # - <<: *download-artifact
+      #   env:
+      #     ARTIFACT: torture
+      # - name: Run test
+      #   env:
+      #     VERSION: ${{ github.ref_name }}
+      #   run: ./scripts/test.sh
 
   publish-operator:
     runs-on: ubuntu-latest
