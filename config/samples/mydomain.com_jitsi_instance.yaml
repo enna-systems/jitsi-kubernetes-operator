@@ -47,6 +47,8 @@ spec:
       name: jitsi-custom-config
     customTitleConfigCM:
       name: jitsi-custom-config
+    customTranslationDeConfigCM:
+      name: jitsi-custom-config
     customCloseConfigCM:
       name: jitsi-custom-config
     image: jitsi/web:stable-6726-1
